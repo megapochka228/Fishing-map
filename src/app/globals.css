@@ -14,3 +14,7 @@ body {
   height: 100%;
   font-family: system-ui, sans-serif;
 }
+
+.zagolovok {
+  text-align: center;
+}

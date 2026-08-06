@@ -29,7 +29,7 @@ export default function FishingMap() {
   const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer } = ymaps;
   return (
     <div className={styles.mapWrapper}>
-      <YMap location={{ center: HOME, zoom: 10 }}>
+      <YMap location={{ center: HOME, zoom: 12 }}>
         <YMapDefaultSchemeLayer />
         <YMapDefaultFeaturesLayer />
       </YMap>
