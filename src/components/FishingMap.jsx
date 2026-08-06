@@ -3,10 +3,15 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import styles from "./FishingMap.module.css";
+import SpotMarker from "./SpotMarker";
+import { spots } from "@/data/spots";
+
 const HOME = [49.946824, 53.146105];
+
 export default function FishingMap() {
   const [ymaps, setYmaps] = React.useState(null);
   const [error, setError] = React.useState(null);
+  const [selectedId, setSelectedId] = React.useState(null);
 
   React.useEffect(() => {
     if (typeof ymaps3 === "undefined") {
@@ -26,13 +31,29 @@ export default function FishingMap() {
   if (!ymaps) {
     return <div className={styles.loader}>Загрузка карты...</div>;
   }
-  const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer } = ymaps;
+
+  const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker } =
+    ymaps;
+  const selectedSpot = spots.find((spot) => spot.id === selectedId);
+
   return (
     <div className={styles.mapWrapper}>
-      <YMap location={{ center: HOME, zoom: 12 }}>
+      <YMap location={{ center: HOME, zoom: 6 }}>
         <YMapDefaultSchemeLayer />
         <YMapDefaultFeaturesLayer />
+        {spots.map((spot) => (
+          <SpotMarker
+            key={spot.id}
+            YMapMarker={YMapMarker}
+            spot={spot}
+            isActive={spot.id === selectedId}
+            onSelect={setSelectedId}
+          />
+        ))}
       </YMap>
+      {selectedSpot && (
+        <div className={styles.debag}>Выбрано: {selectedSpot.title}</div>
+      )}
     </div>
   );
 }
