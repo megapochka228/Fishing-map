@@ -38,7 +38,7 @@ export default function FishingMap() {
 
   return (
     <div className={styles.mapWrapper}>
-      <YMap location={{ center: HOME, zoom: 6 }}>
+      <YMap location={{ center: HOME, zoom: 14 }}>
         <YMapDefaultSchemeLayer />
         <YMapDefaultFeaturesLayer />
         {spots.map((spot) => (
