@@ -5,6 +5,7 @@ import * as ReactDOM from "react-dom";
 import styles from "./FishingMap.module.css";
 import SpotMarker from "./SpotMarker";
 import { spots } from "@/data/spots";
+import SpotPanel from "./SpotPanel";
 
 const HOME = [49.946824, 53.146105];
 
@@ -38,7 +39,7 @@ export default function FishingMap() {
 
   return (
     <div className={styles.mapWrapper}>
-      <YMap location={{ center: HOME, zoom: 14 }}>
+      <YMap location={{ center: HOME, zoom: 12 }}>
         <YMapDefaultSchemeLayer />
         <YMapDefaultFeaturesLayer />
         {spots.map((spot) => (
@@ -51,9 +52,7 @@ export default function FishingMap() {
           />
         ))}
       </YMap>
-      {selectedSpot && (
-        <div className={styles.debag}>Выбрано: {selectedSpot.title}</div>
-      )}
+      <SpotPanel spot={selectedSpot} onClose={() => setSelectedId(null)} />
     </div>
   );
 }
