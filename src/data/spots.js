@@ -23,7 +23,7 @@ export const spots = [
     date: "2025-06-28",
     gear: "Спиннинг(вертушка)",
     note: "Клюет с 18 до 21",
-    photo: "/photo/ryba_okun.jpg",
+    photo: "/photos/ryba_okun.jpg",
     fish: [
       { name: "Красноперка", weight: 0.1, count: 1 },
       { name: "Плотва(сорожка)", weight: 0.1, count: 1 },

@@ -39,7 +39,7 @@
 
 .meta {
   margin-top: 10px;
-  color: lightgray;
+  color: rgb(111, 111, 111);
 }
 
 .photo {
@@ -52,7 +52,7 @@
 
 .subtitle {
   margin-top: 50px;
-  color: lightgray;
+  color: rgb(111, 111, 111);
   text-transform: uppercase;
 }
 
@@ -71,7 +71,7 @@
 }
 
 .fishNumbers {
-  color: lightgrey;
+  color: rgb(111, 111, 111);
 }
 
 .total {

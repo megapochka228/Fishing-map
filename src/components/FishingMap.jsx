@@ -26,6 +26,16 @@ export default function FishingMap() {
       })
       .catch((e) => setError(String(e)));
   }, []);
+
+  React.useEffect(() => {
+    function handleKeyDown(e) {
+      if (e.key === "Escape") {
+        setSelectedId(null);
+      }
+    }
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, []);
   if (error) {
     return <div className={styles.loader}>{error}</div>;
   }
