@@ -25,7 +25,7 @@ export default function SpotPanel({ spot, onClose }) {
       <h3 className={styles.subtitle}>Улов:</h3>
       <ul className={styles.fishList}>
         {spot.fish.map((fish) => (
-          <li className={fishItem} key={fish.name}>
+          <li className={styles.fishItem} key={fish.name}>
             <span className={styles.fishName}>{fish.name}</span>
             <span className={styles.fishNumbers}>
               {fish.count} шт. - {(fish.weight * fish.count).toFixed(1)} кг

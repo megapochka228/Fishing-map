@@ -51,28 +51,33 @@
 }
 
 .subtitle {
+  margin-top: 50px;
+  color: lightgray;
+  text-transform: uppercase;
 }
 
 .fishList {
+  margin-top: 10px;
+  list-style: none;
 }
 
 .fishItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
 }
 
 .fishName {
 }
 
 .fishNumbers {
-}
-
-.count {
-}
-
-.weight {
+  color: lightgrey;
 }
 
 .total {
+  margin-top: 50px;
 }
 
 .note {
+  margin-top: 10px;
 }
