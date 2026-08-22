@@ -1,0 +1,19 @@
+.header {
+  top: 16px;
+  left: 16px;
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  background-color: white;
+  backdrop-filter: blur(8px);
+  border-radius: 10px;
+}
+
+.logo {
+}
+
+.stats {
+  color: rgb(111, 111, 111);
+}
