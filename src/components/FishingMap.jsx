@@ -4,8 +4,9 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import styles from "./FishingMap.module.css";
 import SpotMarker from "./SpotMarker";
-import { spots } from "@/data/spots";
+import { spots, getAllFishNames } from "@/data/spots";
 import SpotPanel from "./SpotPanel";
+import FishFilter from "./FishFilter";
 
 const HOME = [49.946824, 53.146105];
 
@@ -13,7 +14,8 @@ export default function FishingMap() {
   const [ymaps, setYmaps] = React.useState(null);
   const [error, setError] = React.useState(null);
   const [selectedId, setSelectedId] = React.useState(null);
-
+  const [selectedFish, setSelectedFish] = React.useState(null);
+  const fishNames = getAllFishNames(spots);
   React.useEffect(() => {
     if (typeof ymaps3 === "undefined") {
       setError("Script яндекс карт не загрузился");
