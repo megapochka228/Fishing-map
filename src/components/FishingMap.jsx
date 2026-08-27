@@ -16,6 +16,9 @@ export default function FishingMap() {
   const [selectedId, setSelectedId] = React.useState(null);
   const [selectedFish, setSelectedFish] = React.useState(null);
   const fishNames = getAllFishNames(spots);
+  const visibleSpots = selectedFish
+    ? spots.filter((spot) => spot.fish.some((f) => f.name === selectedFish))
+    : spots;
   React.useEffect(() => {
     if (typeof ymaps3 === "undefined") {
       setError("Script яндекс карт не загрузился");
@@ -59,7 +62,7 @@ export default function FishingMap() {
       <YMap location={{ center: HOME, zoom: 12 }}>
         <YMapDefaultSchemeLayer />
         <YMapDefaultFeaturesLayer />
-        {spots.map((spot) => (
+        {visibleSpots.map((spot) => (
           <SpotMarker
             key={spot.id}
             YMapMarker={YMapMarker}
