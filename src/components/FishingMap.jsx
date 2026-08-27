@@ -51,6 +51,11 @@ export default function FishingMap() {
 
   return (
     <div className={styles.mapWrapper}>
+      <FishFilter
+        fishNames={fishNames}
+        selectedFish={selectedFish}
+        onChange={setSelectedFish}
+      />
       <YMap location={{ center: HOME, zoom: 12 }}>
         <YMapDefaultSchemeLayer />
         <YMapDefaultFeaturesLayer />
